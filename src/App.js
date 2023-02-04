@@ -6,7 +6,6 @@ import React, {useState} from 'react'
 import Alert from './components/Alert';
 import About from './components/About';
 import {
-  BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
@@ -40,14 +39,13 @@ function App() {
   }
   return (
     <>    
-     <Router>
+
         <Navbar title="TextUtils"  mode={mode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
         <Routes>
         <Route exact path='/about' element={<About mode={mode} />} />
         <Route exact path='/' element={ <TextForm heading="Enter the text below:" mode={mode} showAlert={showAlert} />}/>
         </Routes>
-      </Router>
     </>
   );
 }
